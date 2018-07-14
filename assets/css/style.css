@@ -1,0 +1,26 @@
+h1, 
+form, 
+#emotions-view {
+    margin: 25px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Knewave', cursive;
+    font-size: 80px;
+}
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(160, 233, 188);
+    background-image: url("../images/notepaper_medium.jpg");
+    background-size: 100%;
+}
+
+.emotion-btn {
+    color: black;
+    background-color: white;
+    padding: 5px;
+    border: solid 1px black;
+    margin-left: 25px;
+    border-radius: 15px;
+}

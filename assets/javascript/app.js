@@ -47,7 +47,7 @@
  }
 
 //Function that handles clicks on the gif images to switch between still and animated
- $(".gif").on("click", function() {
+ $("#emotions-view").on("click", ".gif", function() {
      console.log("click");
     var state = $(this).attr("data-state");
     console.log(state);
