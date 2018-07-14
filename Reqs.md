@@ -1,84 +1,40 @@
-JavaScript Assignment 2
+Before You Begin
+Hit the GIPHY API.
+
+Fool around with the GIPHY API. Giphy API.
+Be sure to read about these GIPHY parameters (hint, hint):
+q
+limit
+rating
+
+Like many APIs, GIPHY requires developers to use a key to access their API data. To use the GIPHY API, you'll need a GIPHY account (don't worry, it's free!) and then obtain an API Key by creating an app.
+Make sure you switch the protocol in the query URL from http to https, or the app may not work properly when deployed to Github Pages.
 
 
-Overview
-
-In this assignment, You'll create a Trivia game using JavaScript for the logic and jQuery to manipulate HTML. Be sure to layout this app with valid HTML and stylish CSS.
-
-
+Watch the demo video
+You should have a high-level understanding of how this assignment works before attempting to code it.
 Submission on BCS
 
 
 Please submit both the deployed Github.io link to your homework AND the link to the Github Repository!
+Instructions
+Before you can make any part of our site work, you need to create an array of strings, each one related to a topic that interests you. Save it to a variable called topics.
+We chose animals for our theme, but you can make a list to your own liking.
+Your app should take the topics in this array and create buttons in your HTML.
+Try using a loop that appends a button for each string in the array.
+When the user clicks on a button, the page should grab 10 static, non-animated gif images from the GIPHY API and place them on the page.
+When the user clicks one of the still GIPHY images, the gif should animate. If the user clicks the gif again, it should stop playing.
+
+Under every gif, display its rating (PG, G, so on).
 
 
-
-Before You Begin
-
-
-Create a GitHub repo called TriviaGame, then clone the repo to your computer.
-Create a file inside of the TriviaGame folder called index.html. This is where you'll mark up all of your HTML.
-Don't forget to include a script tag with the jQuery library.
-Create a folder inside of the TriviaGame folder called assets.
-Inside assets, create three folders: css, javascript, images
+This data is provided by the GIPHY API.
+Only once you get images displaying with button presses should you move on to the next step.
 
 
-
-In your css folder, create a style.css file.
-In your javascript folder, create an app.js file; here you'll write all of your JavaScript and jQuery.
-In your images folder, save whatever images you'd like to use in this exercise.
-
-
-
-Choose a game to build from your options below. 
-
-
-
-Option One: Basic Quiz (Timed Form)
-
-
-
-Click Here to Watch the Demo.
-
-
-You'll create a trivia form with multiple choice or true/false options (your choice).
-
-The player will have a limited amount of time to finish the quiz. 
-
-
-The game ends when the time runs out. The page will reveal the number of questions that players answer correctly and incorrectly.
-
-
-Don't let the player pick more than one answer per question.
-Don't forget to include a countdown timer.
-
-
-
-Option Two: Advanced Assignment (Timed Questions)
-
-
-
-Click Here to Watch the demo.
-
-
-You'll create a trivia game that shows only one question until the player answers it or their time runs out.
-If the player selects the correct answer, show a screen congratulating them for choosing the right option. After a few seconds, display the next question -- do this without user input.
-
-The scenario is similar for wrong answers and time-outs.
-
-
-If the player runs out of time, tell the player that time's up and display the correct answer. Wait a few seconds, then show the next question.
-If the player chooses the wrong answer, tell the player they selected the wrong option and then display the correct answer. Wait a few seconds, then show the next question.
-
-
-On the final screen, show the number of correct answers, incorrect answers, and an option to restart the game (without reloading the page).
-
-
-
-Reminder: Submission on BCS
-
-
-Please submit both the deployed Github.io link to your homework AND the link to the Github Repository!
+Add a form to your page takes the value from a user input box and adds it into your topics array. Then make a function call that takes each topic in the array remakes the buttons on the page.
+Deploy your assignment to Github Pages.
+Rejoice! You just made something really cool.
 
 
 
@@ -89,34 +45,39 @@ Minimum Requirements
 Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed. Adding a README.md as well as adding this homework to your portfolio are required as well and more information can be found below.
 
 
+Bonus Goals
 
+Ensure your app is fully mobile responsive.
+Allow users to request additional gifs to be added to the page.
+Each request should ADD 10 gifs to the page, NOT overwrite the existing gifs.
+
+
+List additional metadata (title, tags, etc) for each gif in a clean and readable format.
+Include a 1-click download button for each gif, this should work across device types.
+Integrate this search with additional APIs such as OMDB, or Bands in Town. Be creative and build something you are proud to showcase in your portfolio
+
+Allow users to add their favorite gifs to a favorites section.
+
+
+This should persist even when they select or add a new topic.
+If you are looking for a major challenge, look into making this section persist even when the page is reloaded(via localStorage or cookies).
+
+
+Reminder: Submission on BCS
+
+Please submit both the deployed Github.io link to your homework AND the link to the Github Repository!
 
 Create a README.md
 
 Add a README.md to your repository describing the project. Here are some resources for creating your README.md. Here are some resources to help you along the way:
 
-
 About READMEs
 Mastering Markdown
 
-
-
-
-
 Add To Your Portfolio
-
 After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
 
-
-
-
-A Few Last Notes
-
-
-Styling and theme are completely up to you. Get creative!
-Remember to deploy your assignment to Github Pages.
-
-
-*If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
+One More Thing
+If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
 
 Good Luck!
