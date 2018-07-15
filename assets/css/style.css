@@ -24,3 +24,14 @@ body {
     margin-left: 25px;
     border-radius: 15px;
 }
+
+.fa,
+.heart {
+    font-size: 25px;
+    position: absolute;
+    color: white;
+  }
+
+  .fa:hover {
+    color: red;
+  }

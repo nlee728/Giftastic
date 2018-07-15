@@ -25,6 +25,10 @@
     // Retrieving the URL for the image and adding image to div
      var emotionDiv = $("<div class='emotion'>");
 
+     // Add favorite button and append to emotiondiv
+    var faveButton = $("<i>").attr("class", "fa fa-heart");
+    emotionDiv.append(faveButton);
+
      var gifURL = results[i].images.downsized.url;
      var stillURL = results[i].images.downsized_still.url;
 
@@ -35,13 +39,22 @@
                            .attr("class", "gif");
      emotionDiv.append(image);
 
-     //Get rating info and append to div
+  
+     //Get title info and append to div
+     var title = response.data[i].title;
+     var p = $("<p>").text("Title: " + title);
+     emotionDiv.append(p);
+    $("#emotions-view").prepend(emotionDiv);
+    
+    //Get rating info and append to div
       var rating = response.data[i].rating;
       var p = $("<p>").text("Rating: " + rating);
       emotionDiv.append(p);
      $("#emotions-view").prepend(emotionDiv);
 
-    }
+     
+
+      }
    });
 
  }
@@ -92,6 +105,12 @@
    // Calling renderButtons to display the emotions array
    renderButtons();
  });
+
+// //Click event handler for the favorites heart
+// $("#emotions-view").on("click", ".heart").click(function() {
+//   console.log("I clicked a favorite");
+//   $(".heart.fa").toggleClass("fa-heart fa-heart-o");
+// });
 
  // Adding a click event listener to all elements with a class of "emotion-btn"
  $(document).on("click", ".emotion-btn", displayemotionInfo);

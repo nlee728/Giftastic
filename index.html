@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
           crossorigin="anonymous">
+          <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Google Fonts -->
@@ -18,8 +20,11 @@
   </head>
   <body>
 
-    <div class="container">
+    
+     <div class="container">
       <h1>How Are You Feeling Today?</h1>
+      <div class="row">  
+          <div class="col-md-6">
   
       <!-- Rendered Buttons will get Dumped Here  -->
       <div id="buttons-view"></div>
@@ -31,12 +36,26 @@
         <input type="text" id="emotion-input">
         <br>
   
-        <!-- Button triggers new movie to be added -->
+        <!-- Button triggers new emotion to be added -->
         <input id="add-emotion" type="submit" value="Submit">
       </form>
 
-       <!-- Movies will Get Dumped Here -->
+       <!-- Emotions will Get Dumped Here -->
        <div id="emotions-view"></div>
+      </div>
+      <div class="col-md-6">
+          <div class="container">
+              <h6>My Favorites</h6>
+
+               <!-- Favorites will Get moved Here -->
+               <div id="favorites-view"></div>
+              </div>
+
+      </div>
+    </div>
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
