@@ -26,7 +26,8 @@
      var emotionDiv = $("<div class='emotion'>");
 
      // Add favorite button and append to emotiondiv
-    var faveButton = $("<i>").attr("class", "fa fa-heart");
+    var faveButton = $("<i>").attr("class", "fa fa-heart")
+                            .attr("id", "fave-button");
     emotionDiv.append(faveButton);
 
      var gifURL = results[i].images.downsized.url;
@@ -52,8 +53,6 @@
       emotionDiv.append(p);
      $("#emotions-view").prepend(emotionDiv);
 
-     
-
       }
    });
 
@@ -76,24 +75,21 @@
     console.log(state);
   });
 
-
- // Function for displaying emotion data
+ // Function for displaying emotion gifs and data
  function renderButtons() {
 
    // Deleting the emotions prior to adding new emotions to avoid repeat buttons
    $("#buttons-view").empty();
 
-   // Looping through the array of emotions
+   // Looping through the array of emotions and dynamically generating buttons for each emotion in the array
    for (var i = 0; i < emotions.length; i++) {
-
-     // Dynamically generating buttons for each emotion in the array
      var a = $("<button>");
      a.addClass("emotion-btn");
      a.attr("data-name", emotions[i]);
      a.text(emotions[i]);
      $("#buttons-view").append(a);
    }
- }
+ };
 
  // Click event handler for the emotions buttons
  $("#add-emotion").on("click", function(event) {
@@ -102,15 +98,32 @@
    var emotion = $("#emotion-input").val().trim();
    emotions.push(emotion);
 
-   // Calling renderButtons to display the emotions array
+   // Calling renderButtons to display the emotions array after adding new value
    renderButtons();
  });
 
-// //Click event handler for the favorites heart
-// $("#emotions-view").on("click", ".heart").click(function() {
-//   console.log("I clicked a favorite");
-//   $(".heart.fa").toggleClass("fa-heart fa-heart-o");
-// });
+//Click event handler to add a favorite
+  $("#emotions-view").on("click", ".fa-heart", function() {
+  console.log("I clicked a favorite");
+  if( $(this).attr("class") == "fa fa-heart" ){
+    $(this).attr("class", "fa fa-heart favorited");
+}
+else{
+    $(this).attr("class", "fa fa-heart");
+    }
+  });
+
+
+//  function moveGif (gif) {
+//       if( $(gif).parent().attr("class") == "favorited" ){
+//           $(gif).detach().appendTo('#favorites-view');
+//       }
+//       else{
+//           $(gif).detach().appendTo('#emotions-view'); 
+//       }
+//   }
+//   moveGif();
+ 
 
  // Adding a click event listener to all elements with a class of "emotion-btn"
  $(document).on("click", ".emotion-btn", displayemotionInfo);

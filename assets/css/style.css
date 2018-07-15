@@ -35,3 +35,7 @@ body {
   .fa:hover {
     color: red;
   }
+
+  .favorited {
+      color: red;
+  }
