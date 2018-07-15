@@ -45,13 +45,24 @@
      var title = response.data[i].title;
      var p = $("<p>").text("Title: " + title);
      emotionDiv.append(p);
-    $("#emotions-view").prepend(emotionDiv);
     
     //Get rating info and append to div
       var rating = response.data[i].rating;
       var p = $("<p>").text("Rating: " + rating);
       emotionDiv.append(p);
-     $("#emotions-view").prepend(emotionDiv);
+
+    //Create download now link and append to div
+    var downloadLink = $("<a>").attr("href", gifURL)
+    .text("Download Now")
+    .attr("download", "");
+    emotionDiv.append(downloadLink);
+
+    // Add page break after download button
+    var pageBreak = $("<hr>");
+    emotionDiv.append(pageBreak);
+
+    // Add emotion div to top of html emotions-view div
+    $("#emotions-view").prepend(emotionDiv);
 
       }
    });
@@ -104,25 +115,28 @@
 
 //Click event handler to add a favorite
   $("#emotions-view").on("click", ".fa-heart", function() {
-  console.log("I clicked a favorite");
+  
   if( $(this).attr("class") == "fa fa-heart" ){
     $(this).attr("class", "fa fa-heart favorited");
-}
-else{
-    $(this).attr("class", "fa fa-heart");
+    console.log("I favorited this gif");
     }
+    else{
+    $(this).attr("class", "fa fa-heart");
+    console.log("I un-favorited this gif");
+    }
+
+    function moveGif (gif) {
+      if( $(gif).parent().attr("class") == "favorited" ){
+          $(gif).detach().appendTo('#favorites-view');
+      }
+      else{
+          $(gif).detach().appendTo('#emotions-view'); 
+      }
+  }
+  moveGif();
   });
 
-
-//  function moveGif (gif) {
-//       if( $(gif).parent().attr("class") == "favorited" ){
-//           $(gif).detach().appendTo('#favorites-view');
-//       }
-//       else{
-//           $(gif).detach().appendTo('#emotions-view'); 
-//       }
-//   }
-//   moveGif();
+ 
  
 
  // Adding a click event listener to all elements with a class of "emotion-btn"
